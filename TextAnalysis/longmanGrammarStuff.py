@@ -81,9 +81,3 @@ def dualGenderReferenceFunction(inputWritingTagged):
 #print(calculateNounsFunction(inputWritingTagged))
 #print(percentageOfNounsAsPronounsFunction(inputWritingTagged))
 #print(dualGenderReferenceFunction(inputWritingTagged))
-
-
-# Ones to maybe include or make note:
-# Longman p.589-596: Nouns as pre-modifiers are common in acad prose
-#   dep parsing w/ spacy and see if noun chunk has multiple nounse ? Not sure what suggestion would be
-# Something with hedges from Hyland book

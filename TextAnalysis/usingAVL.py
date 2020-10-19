@@ -1,11 +1,6 @@
 # This file is going to use the AVL to see if any academic words can be suggested
 # Looked at this for some info: https://pypi.org/project/spacy-wordnet/
 
-# What I'm planning to do is:
-#   Import the files
-#   Use spaCy or NLTK to get synsets (WordNet)
-#   If any of the words in the synset were in the file, suggest academic words from AVL
-
 import spacy
 from spacy_wordnet.wordnet_annotator import WordnetAnnotator
 from word_forms.word_forms import get_word_forms
@@ -139,25 +134,3 @@ def useAVLFunction(inputWriting):
     return dictWithAVLSuggestionsPerInputWord
 
 print(useAVLFunction(inputWriting))
-
-
-
-### WORKING ON NOW ###
-# Lemmas: make list of lemmas for AVL list, then when the function finds a word that could be suggested, 
-#   it also has to check against lemmas to ensure the last two letters (or w/e) are the same ???
-#   maybe use the spacy POS tag things to see if it's the root form: https://spacy.io/api/annotation
-# The suggestion in spacy - their tags must also match - lemmatize AVL and orig word - OR
-#   tag orig word, and compare it to a list which contains all the word forms for each word in AVL THEN
-#   it must match with all their forms (write --> writing, writes, wrote, written) - give me the one which has the same tag
-
-
-
-### YANISA THINGS TO CONSIDER ###
-# Also should have it only pick maybe 2 suggested words max? (based on which ones are higher on the acad word list?)
-#   or could do them all (or a higher #), but have it ask 'Did you mean ___, ___, ___, ___, or ___?' (could have direct dict.com links?)
-# Consider only taking noun suggestions.......? (if there are too many)
-#   verb suggestions get a lot of extra things .. eg sugges "use" for orig "apply"
-# Change how words like "have" in "have been" are approached, since "have" might stay? (bigrams/trigrams?)
-# Make sure all my stuff w/ .lower is okay - everything isn't only looking for lowercase/etc
-# If orig word is capitalized at beginning, should capitalize suggestion
-# Can lower the number of AVL words if it seems like there are so many? Look at freqs

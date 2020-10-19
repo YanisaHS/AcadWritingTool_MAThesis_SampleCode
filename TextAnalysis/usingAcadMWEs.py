@@ -191,23 +191,3 @@ class MWEAnalyzer:
 
 #variable = MWEAnalyzer()
 #print(variable.gettingSuggestionsFunction(inputWriting))
-
-# TODO add something that checks first to make sure the prospective MWE isn't already in the list somewhere?
-
-
-
-# Things to consider putting in here:
-#   First check if the collocation exists somewhere in the list
-#       eg to protect against 'offer opportunity' to suggest for 'offer an opportunity' when both are on list -- DONE (set)
-#   Check to see if there are any words in between the phrase 
-#       (should have limit, maybe 3 or less words added in between)
-#       maybe ignore it if it's a pronoun? (eg so 'pick it up' doesn't suggest 'pick up')
-#   If any of the words are missing and something else was substituted in its place
-#       this would only work for MWEs that are 3+ words long
-#       substitution one would have to look into - might try to substitute big content words which
-#           wouldnt make sense
-#   For ones that have more than one MWE match/have matches that overlap each other, suggest both
-#       Like 'Did you mean _______ or ________?' (then in the tool they click which they meant)
-#   This one should come first before the AVL or grammar one - if they're a common MWE, that is first
-##### Ignore any lines that contains 'YANISA' (used for notes if I want to check something later)
-#### Do something about conjunctions?
